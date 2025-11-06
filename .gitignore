@@ -1,0 +1,47 @@
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Editor / IDE settings
+.vscode/
+.idea/
+*.swp
+*.swo
+*.swn
+*.bak
+
+# Dependency directories
+node_modules/
+venv/
+env/
+__pycache__/
+*.py[cod]
+
+# Build / dist outputs
+dist/
+build/
+out/
+*.egg-info/
+
+# Logs and temp files
+*.log
+*.tmp
+*.temp
+*.pid
+
+# Secrets or environment files
+.env
+.env.*
+
+# Coverage / test artifacts
+.coverage
+htmlcov/
+*.pytest_cache/
+*.tox/
+*.coverage
+
+# Local config or caches
+.cache/
+.mypy_cache/
+.pytest_cache/
+
