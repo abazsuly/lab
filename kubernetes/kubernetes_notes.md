@@ -12,6 +12,13 @@ Pods are the atomic unit of a Kubernetes cluster. A pod is a collection of conta
   - Storage (volumes attached to pod, available to all containers)
   - Networking
 
+## ReplicaSets
+ReplicaSets are replicated pods managed by deployments. 
+
+## Namespaces
+Isolates groups of resources within a single cluster. 
+
+
 ## Commands
 `k run nginx-yaml --image=nginx --dry-run=client -o yaml`
 Generates the yaml of a pod that would be sent to the cluster without sending it. Good for creating yaml template of a pod quickly.
@@ -24,3 +31,12 @@ Only creates pod from yaml file
 
 `k apply -f nginx.yaml`
 Creates or applies changes to pod from yaml file
+
+`k edit pod httpd`
+Edits a running pod's yaml in real time (not recommended, but possible)
+
+`k delete pod nginx`
+Deletes a pod
+
+`k exec -it nginx-docs -- /bin/bash`
+Opens a shell inside the pod 
