@@ -40,3 +40,19 @@ Deletes a pod
 
 `k exec -it nginx-docs -- /bin/bash`
 Opens a shell inside the pod 
+
+`k config set-context --current --namespace=mealie`
+Set namespace for all ensuing commands to run in (instead of default)
+
+
+
+
+## Prometheus
+
+### Add prometheus helm chart repo and install prometheus
+`helm repo add prometheus-community https://prometheus-community.github.io/helm-charts`
+`helm repo update`
+`helm install prometheus-stack prometheus-community/kube-prometheus-stack --namespace=monitoring --create-namespace`
+
+### Change values via helm upgrade from values.yaml
+`helm upgrade prometheus-stack prometheus-community/kube-prometheus-stack -n monitoring --values values.yaml`
