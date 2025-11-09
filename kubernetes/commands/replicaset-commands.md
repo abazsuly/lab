@@ -13,4 +13,4 @@
 `kubectl replace -f replicaset-definition.yaml`
 
 ### Scale ReplicaSet (update replicas count, does not change file though)
-`kubectl scale -replicas=6 -f replicaset-definition.yaml`
+`kubectl scale --replicas=6 -f replicaset-definition.yaml`
