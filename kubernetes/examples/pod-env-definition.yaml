@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: myapp-pod
+  labels:
+    app: myapp
+    type: front-end
+spec:
+  containers:
+    - image: nginx
+      name: nginx
+      env:
+        - name: ENVIRONMENT_VAR_NAME
+          value: pink
