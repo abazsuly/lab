@@ -24,7 +24,7 @@ sudo apt update
 sudo apt-cache madison kubeadm
 ```
 
-### upgrade kubeadm (replace command with latest version string)
+### Upgrade kubeadm (replace command with latest version string)
 ```
 sudo apt-mark unhold kubeadm && \
 sudo apt-get update && sudo apt-get install -y kubeadm='1.34.0-1.1' && \
