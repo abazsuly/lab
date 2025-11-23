@@ -5,7 +5,8 @@
 kubectl get all --all-namespaces -o yaml > all-deployed-servics.yaml
 ```
 
-### Take snapshot of etcd using etcdctl
+### Take snapshot of etcd using etcdctl (container based backup)
+#### Note: Certificates are needed to authenticate to endpoint within etcd container)
 ```
 ETCDCTL_API=3 etcdctl \
   --endpoints=https://127.0.0.1:2379 \
@@ -34,26 +35,3 @@ etcdutl snapshot restore /backup/etcd-snapshot.db \
   --data-dir /var/lib/etcd-restored
 ```
 
-### System restore via etcdctl
-```
-systemctl stop kube-apiserver   # stop services first
-etcdctl snapshot restore snapshot.db --data-dir /var/lib/etcd-from-backup
-
-# then update system service definition to use new data dir
-vim etcd.service
-```
-
-#### Contents:
-```
-ExecStart=/usr/local/bin/etcd \\
-[...]
-  --data-dir=/var/lib/etcd
-```
-
-#### Reload service daemon and restart etcd and kube-apiserver
-```
-systemctl daemon-reload
-systemctl restart etcd.service
-systemctl start kube-apiserver
-```
-```
