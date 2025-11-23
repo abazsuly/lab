@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: myapp-pod
+  labels:
+    app: myapp
+    type: front-end
+spec:
+  containers:
+    - name: nginx
+      image: nginx
+  initContainers:
+    - name: log-shipper
+      image: busybox
+      command: 'setup-log-shipper.sh'
+      restartPolicy: Always
+
