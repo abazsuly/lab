@@ -21,7 +21,7 @@ curl http://web-service.apps.svc.cluster.local
 Welcome to NGINX!
 ```
 5. Cross-cluster resolution is possible but generally speaking the cluster boundary is preserved. Example: `*.cluster1.local` and `*.cluster2.local`. Cross-cluster DNS requires additional external configurations as each cluster has its own hard DNS and network boundary.
-6. If a Service is not defined then a pod gets default resolution of its dash-formatted IP along with replacing 'svc' with 'pod':
+6. By default a single pod gets domain resolution via its dash-formatted IP along with replacing 'svc' with 'pod'. This way single pods can be resolved outside of a Service definition:
 ```
 curl http://10-244-1-5.apps.pod.cluster.local
 Welcome to NGINX!
