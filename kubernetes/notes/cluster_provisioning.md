@@ -57,7 +57,7 @@ sudo systemctl enable kubelet
 sudo swapoff -a
 ```
 
-9. On all nodes, load the br_netfilter model and make it persistent across reboots:
+9. On all nodes, load the br_netfilter module and make it persistent across reboots:
 ```shell
 sudo modprobe br_netfilter
 echo br_netfilter | sudo tee /etc/modules-load.d/k8s.conf
