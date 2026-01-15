@@ -121,14 +121,14 @@ kubectl apply -f https://github.com/flannel-io/flannel/releases/latest/download/
 ```
 kubectl get pods -A
 ```
-#### On the worker nodes...
+### On the worker nodes...
 17. Run the join commands given by the controlplane on the worker nodes using sudo
 ```shell
 sudo kubeadm join 192.168.40.69:6443 --token q5ratc.38381twiak2rj2kj \
 	--discovery-token-ca-cert-hash sha256:586a766b7e6009c341a997962bf4fdd6e98676c018dcababe27ca105ced16cb5
 ```
 
-#### Finished!
+### Finished!
 18. All nodes should be present on controlplane via `kubectl get nodes` and all pods should be running via `kubectl get pods -A`
 
 
